@@ -19,7 +19,14 @@ connectDB();
 const app = express();
 
 // Middlewares
-app.use(cors());
+// Configurar CORS para permitir frontend de Render y localhost
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://catalogo-marcela-frontend.onrender.com'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
