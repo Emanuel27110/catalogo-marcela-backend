@@ -1,0 +1,17 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Imágenes subidas (las subiremos más tarde con Cloudinary)
+uploads/*
+!uploads/.gitkeep
