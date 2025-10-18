@@ -1,4 +1,4 @@
-// @desc    Subir imagen
+// @desc    Subir imagen a Cloudinary
 // @route   POST /api/upload
 // @access  Privado/Admin
 export const subirImagen = async (req, res) => {
@@ -7,8 +7,8 @@ export const subirImagen = async (req, res) => {
       return res.status(400).json({ mensaje: 'No se envió ninguna imagen' });
     }
 
-    // URL de la imagen subida
-    const imageUrl = `/uploads/${req.file.filename}`;
+    // Cloudinary ya subió el archivo, multer nos da la URL completa
+    const imageUrl = req.file.path; // URL completa de Cloudinary
 
     res.status(200).json({
       mensaje: 'Imagen subida correctamente',
